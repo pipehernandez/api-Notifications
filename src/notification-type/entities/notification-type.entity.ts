@@ -1,5 +1,5 @@
 import { Template } from "src/templates/entities/template.entity";
-import { Column, Entity, ManyToOne, PrimaryColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryColumn } from "typeorm";
 
 @Entity('notificationTypes')
 export class NotificationType {
@@ -9,6 +9,10 @@ export class NotificationType {
     @Column()
     name: string;
 
+    @Column()
+    templateId:number;
+
     @ManyToOne(() => Template, template => template.id)
+    @JoinColumn({name:"templateId"})
     template: Template;
 }

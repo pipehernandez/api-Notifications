@@ -13,7 +13,7 @@ export class Register {
     serverResponse: String;
 
     @Column()
-    messageDescription: Text;
+    messageDescription: string;
 
     // @ManyToMany(() => User, user => user.id)
     // users: User[];
