@@ -7,8 +7,8 @@ export class Template {
     id: number;
 
     @Column()
-    body: Text;
+    body: string;
 
-    @OneToMany(() => NotificationType, notificationType => notificationType.id)
+    @OneToMany(() => NotificationType, notificationType => notificationType)
     notificationTypes: NotificationType[];
 }
